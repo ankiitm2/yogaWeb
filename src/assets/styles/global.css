@@ -758,10 +758,10 @@ textarea.form-control {
 
 .contact-banner {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("/images/contact-banner.jpg") center/cover no-repeat;
+    url("/full-shot-man-practicing-yoga.jpg") center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 6rem 0 3rem;
+  padding: 10rem 0 6rem;
 }
 
 .contact-banner h1 {
