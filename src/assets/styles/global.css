@@ -750,3 +750,168 @@ textarea.form-control {
     font-size: 1.1rem;
   }
 }
+
+/* Contact Page Styles */
+.contact-page {
+  background-color: #f9f9f9;
+}
+
+.contact-banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("/images/contact-banner.jpg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 6rem 0 3rem;
+}
+
+.contact-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+}
+
+.breadcrumbs span:last-child {
+  color: #4a6b57;
+  font-weight: 500;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.contact-info {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.info-icon {
+  font-size: 2rem;
+  color: #4a6b57;
+  margin-bottom: 1rem;
+}
+
+.info-card h3 {
+  color: #4a6b57;
+  margin-bottom: 0.5rem;
+}
+
+.info-card a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+  color: #4a6b57;
+}
+
+.booking-form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.booking-form-container h2 {
+  color: #4a6b57;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.booking-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-group:nth-child(5),
+.form-group:nth-child(6) {
+  grid-column: span 2;
+}
+
+.submit-btn {
+  grid-column: span 2;
+  background: #4a6b57;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #3a5a47;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:nth-child(5),
+  .form-group:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+}

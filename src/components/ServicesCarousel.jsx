@@ -39,7 +39,7 @@ const ServicesCarousel = () => {
       id: 6,
       title: "Prenatal Yoga",
       description: "Specialized yoga for expecting mothers.",
-      image: "/3d-cartoon-fitness-man.jpg",
+      image: "/person-doing-yoga-pilates.jpg",
     },
   ];
 
