@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import About from "../components/AboutSection";
+import AboutSection from "../components/AboutSection";
 
 const AboutPage = () => {
   return (
@@ -9,8 +9,7 @@ const AboutPage = () => {
       exit={{ opacity: 0 }}
       className="about-page"
     >
-      <About expanded={true} />
-      {/* Add more detailed content here */}
+      <AboutSection showBanner={true} />
     </motion.div>
   );
 };

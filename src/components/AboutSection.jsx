@@ -1,18 +1,31 @@
-const AboutSection = () => {
+import { Link } from "react-router-dom";
+
+const AboutSection = ({ showBanner = false }) => {
   return (
-    <section className="section about-section">
-      <div className="container">
-        <div className="banner">
-          <div className="bannerImg">
+    <section className="about-section">
+      {/* Conditional banner rendering */}
+      {showBanner && (
+        <div className="about-page-banner">
+          <div className="banner-image-container">
             <img
               src="src/assets/images/person-doing-yoga-nature.jpg"
-              alt="RB Yoga Banner"
-              width="100%"
-              height="100%"
+              alt="RB Yoga"
+              className="banner-image"
             />
           </div>
+          <div className="banner-content">
+            <h1 className="banner-title">ABOUT US</h1>
+            <div className="breadcrumbs">
+              <Link to="/">Home</Link>
+              <span> / </span>
+              <span>About Us</span>
+            </div>
+          </div>
         </div>
-        <h2 className="section-title">About RB Yoga</h2>
+      )}
+
+      {/* Rest of the about content */}
+      <div className="container">
         <div className="about-content">
           <div className="about-text">
             <p>

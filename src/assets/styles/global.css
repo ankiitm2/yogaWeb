@@ -33,6 +33,7 @@ body {
   color: white;
   font-size: 1.4rem;
   top: 0;
+  z-index: 50;
 }
 
 .header-container {
@@ -230,6 +231,95 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+/* About Page Banner - Full width under nav */
+.about-page-banner {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.banner-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  text-align: center;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.breadcrumbs {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+}
+
+.breadcrumbs a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #4a6b57;
+}
+
+.breadcrumbs span:last-child {
+  color: #4a6b57;
+  font-weight: 500;
+}
+
+/* Remove padding from about section */
+.about-section {
+  padding: 0;
+}
+
+/* Adjust container padding if needed */
+.about-section .container {
+  padding: 4rem 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-page-banner {
+    height: 300px;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .breadcrumbs {
+    font-size: 0.9rem;
+  }
 }
 
 /* Services Section */
