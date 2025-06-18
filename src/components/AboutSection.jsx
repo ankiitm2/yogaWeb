@@ -8,7 +8,7 @@ const AboutSection = ({ showBanner = false }) => {
         <div className="about-page-banner">
           <div className="banner-image-container">
             <img
-              src="src/assets/images/person-doing-yoga-nature.jpg"
+              src="/person-doing-yoga-nature.jpg"
               alt="RB Yoga"
               className="banner-image"
             />
