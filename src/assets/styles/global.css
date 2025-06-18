@@ -899,7 +899,8 @@ textarea.form-control {
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
   }
 
   .booking-form {
