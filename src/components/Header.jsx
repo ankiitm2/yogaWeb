@@ -14,11 +14,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <Link to="/" className="logo-link">
-          <img
-            src="./src/assets/images/yogaLogo.png"
-            alt="RB Yoga Logo"
-            width={60}
-          />
+          <img src="/yogaLogo.png" alt="RB Yoga Logo" width={60} />
           <span>RB Yoga</span>
         </Link>
 
