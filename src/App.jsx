@@ -1,26 +1,29 @@
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import AboutPage from "./pages/AboutPage";
-import Services from "./pages/Services";
-import ContactPage from "./pages/Contact";
+import LoadingSpinner from "./components/LoadingSpinner";
 import "./assets/styles/global.css";
 import "./assets/styles/index.css";
+
+const Home = lazy(() => import("./pages/Home"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const Services = lazy(() => import("./pages/Services"));
+const ContactPage = lazy(() => import("./pages/Contact"));
 
 function App() {
   return (
     <Router>
       <div className="app">
         <Header />
-        <main>
+        <Suspense fallback={<LoadingSpinner />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
-        </main>
+        </Suspense>
         <Footer />
       </div>
     </Router>
