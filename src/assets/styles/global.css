@@ -915,3 +915,77 @@ textarea.form-control {
     grid-column: span 1;
   }
 }
+
+/* Form Validation */
+.error {
+  border-color: #e74c3c !important;
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+  display: block;
+}
+
+/* Success Modal */
+.success-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background: #4a6b57;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1rem;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.modal-content h3 {
+  color: #4a6b57;
+  margin-bottom: 0.5rem;
+}
+
+.modal-close-btn {
+  background: #4a6b57;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: #3a5a47;
+}
+
+/* Loading State */
+.submit-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
