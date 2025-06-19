@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
 import "./assets/styles/global.css";
 import "./assets/styles/index.css";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 
 const Home = lazy(() => import("./pages/Home"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -25,6 +26,7 @@ function App() {
           </Routes>
         </Suspense>
         <Footer />
+        <ExitIntentPopup />
       </div>
     </Router>
   );
