@@ -1,3 +1,4 @@
+import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
@@ -30,10 +31,28 @@ const ExitIntentPopup = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setShowPopup(false);
+
+    try {
+      await emailjs.send(
+        "service_d6ynf6c",
+        "template_ep8xazb",
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: "Popup form submission",
+        },
+        "iZFeSmwOTXfOQ_Ovy"
+      );
+
+      alert("Thank you! We will contact you shortly.");
+      setShowPopup(false);
+    } catch (error) {
+      console.error("Failed to send:", error);
+      alert("Failed to send. Please try again later.");
+    }
   };
 
   return (
