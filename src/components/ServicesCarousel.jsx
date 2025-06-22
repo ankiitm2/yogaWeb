@@ -87,7 +87,7 @@ const ServicesCarousel = () => {
     <section className="services-carousel-section">
       <div className="container">
         <h2 className="section-title">Our Services</h2>
-        <p className="section-subtitle">
+        <p className="section-subtitle text-center">
           Tailored yoga experiences delivered to your doorstep
         </p>
 

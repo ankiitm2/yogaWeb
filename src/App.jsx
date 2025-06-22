@@ -6,6 +6,7 @@ import LoadingSpinner from "./components/LoadingSpinner";
 import "./assets/styles/global.css";
 import "./assets/styles/index.css";
 import ExitIntentPopup from "./components/ExitIntentPopup";
+import { ToastProvider } from "./components/ToastNotification";
 
 const Home = lazy(() => import("./pages/Home"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <div className="app">
+        <ToastProvider />
         <Header />
         <Suspense fallback={<LoadingSpinner />}>
           <Routes>

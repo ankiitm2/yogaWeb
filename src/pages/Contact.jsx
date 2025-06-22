@@ -35,27 +35,6 @@ const ContactPage = () => {
     { id: "prenatal", name: "Prenatal Yoga" },
   ];
 
-  // Initialize Google Maps
-  useEffect(() => {
-    const loader = new Loader({
-      apiKey: "YOUR_GOOGLE_MAPS_API_KEY",
-      version: "weekly",
-    });
-
-    loader.load().then(() => {
-      const map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 28.6139, lng: 77.209 }, // Delhi coordinates
-        zoom: 12,
-      });
-      new google.maps.Marker({
-        position: { lat: 28.6139, lng: 77.209 },
-        map,
-        title: "RB Yoga Studio",
-      });
-      setMap(map);
-    });
-  }, []);
-
   // Handle form validation
   const validate = () => {
     const newErrors = {};

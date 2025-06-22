@@ -2,6 +2,7 @@ import emailjs from "@emailjs/browser";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
+import { showToast } from "./ToastNotification";
 
 const ExitIntentPopup = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -9,6 +10,7 @@ const ExitIntentPopup = () => {
     name: "",
     email: "",
     phone: "",
+    message: "Interested in yoga session", // Default message
   });
 
   // Track reloads using sessionStorage
@@ -27,7 +29,7 @@ const ExitIntentPopup = () => {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target; // Fixed destructuring
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -39,19 +41,19 @@ const ExitIntentPopup = () => {
         "service_d6ynf6c",
         "template_ep8xazb",
         {
+          title: "New Yoga Booking Request",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          message: "Popup form submission",
+          message: formData.message,
         },
         "iZFeSmwOTXfOQ_Ovy"
       );
-
-      alert("Thank you! We will contact you shortly.");
+      showToast?.("Thank you! We will contact you shortly.");
       setShowPopup(false);
     } catch (error) {
       console.error("Failed to send:", error);
-      alert("Failed to send. Please try again later.");
+      showToast?.("Failed to send. Please try again later.", "error");
     }
   };
 
