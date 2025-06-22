@@ -10,31 +10,20 @@ const ExitIntentPopup = () => {
     phone: "",
   });
 
+  // Track reloads using sessionStorage
   useEffect(() => {
-    // Track mouse movement for exit intent
-    const handleMouseMove = (e) => {
-      if (e.clientY <= 10) {
+    const isReloaded = sessionStorage.getItem("isReloaded");
+
+    if (isReloaded === "true") {
+      const timer = setTimeout(() => {
         setShowPopup(true);
-      }
-    };
+      }, 1000); // Show after 1 second
 
-    // Track beforeunload event
-    const handleBeforeUnload = (e) => {
-      if (!showPopup) {
-        e.preventDefault();
-        setShowPopup(true);
-        return ""; // Required for Chrome
-      }
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    window.addEventListener("beforeunload", handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("beforeunload", handleBeforeUnload);
-    };
-  }, [showPopup]);
+      return () => clearTimeout(timer);
+    } else {
+      sessionStorage.setItem("isReloaded", "true");
+    }
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +32,7 @@ const ExitIntentPopup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission (connect to your booking system)
-    console.log("Popup form submitted:", formData);
+    console.log("Form submitted:", formData);
     setShowPopup(false);
   };
 
@@ -52,59 +40,67 @@ const ExitIntentPopup = () => {
     <AnimatePresence>
       {showPopup && (
         <motion.div
-          className="exit-intent-overlay"
+          className="popup-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          onClick={() => setShowPopup(false)}
         >
           <motion.div
-            className="exit-intent-popup"
-            initial={{ scale: 0.9 }}
-            animate={{ scale: 1 }}
-            exit={{ scale: 0.9 }}
+            className="popup-content"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 20, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
           >
-            <button className="close-btn" onClick={() => setShowPopup(false)}>
+            <button
+              className="close-btn"
+              onClick={() => setShowPopup(false)}
+              aria-label="Close popup"
+            >
               <FaTimes />
             </button>
 
-            <h3>Wait! Don't Miss Out</h3>
-            <p>Book your yoga session now and get 10% off your first class!</p>
+            <div className="popup-body">
+              <h3>Special Offer Just For You!</h3>
+              <p>Book your first session today and get 15% off</p>
 
-            <form onSubmit={handleSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <button type="submit" className="submit-btn">
-                Book My Session
-              </button>
-            </form>
+              <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <button type="submit" className="submit-btn">
+                  Claim My Discount
+                </button>
+              </form>
+            </div>
           </motion.div>
         </motion.div>
       )}
