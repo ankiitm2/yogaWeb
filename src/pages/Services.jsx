@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft, FaHome } from "react-icons/fa";
 
 const Services = () => {
   const services = [
@@ -74,18 +74,22 @@ const Services = () => {
 
   return (
     <section className="services-section" id="services">
+      {/* Banner Section */}
       <div className="services-banner">
-        <div className="banner-overlay">
-          <div className="container">
-            <h1>Transform Your Wellness Journey</h1>
-            <p>Personalized yoga services designed for your unique needs</p>
-            <img src="/yogaLogo.png" alt="RB Yoga Logo" width={60} />
+        <div className="container">
+          <h1>OUR SERVICES</h1>
+          <div className="breadcrumbs">
+            <a href="/">
+              <FaHome /> Home
+            </a>
+            <span> / </span>
+            <span>Services</span>
           </div>
         </div>
       </div>
 
       <div className="container">
-        <h2 className="section-title">Our Services</h2>
+        <h2 className="section-title">Discover Our Offerings</h2>
         <p className="section-subtitle">
           Personalized yoga experiences at your doorstep
         </p>
@@ -98,6 +102,7 @@ const Services = () => {
                 key={service.id}
                 className={`tab-btn ${activeTab === index ? "active" : ""}`}
                 onClick={() => setActiveTab(index)}
+                aria-label={`View ${service.title} service`}
               >
                 {service.title}
               </button>
@@ -128,6 +133,7 @@ const Services = () => {
               <button
                 className="expand-btn"
                 onClick={() => toggleExpand(activeTab)}
+                aria-expanded={isExpanded[activeTab]}
               >
                 {isExpanded[activeTab] ? "Show Less" : "Learn More"}
               </button>
@@ -158,18 +164,27 @@ const Services = () => {
             </div>
 
             <div className="carousel-controls">
-              <button className="nav-btn" onClick={prevService}>
+              <button
+                className="nav-btn"
+                onClick={prevService}
+                aria-label="Previous service"
+              >
                 <FaChevronLeft />
               </button>
 
               <button
                 className="expand-btn"
                 onClick={() => toggleExpand(activeTab)}
+                aria-expanded={isExpanded[activeTab]}
               >
                 {isExpanded[activeTab] ? "Show Less" : "Learn More"}
               </button>
 
-              <button className="nav-btn" onClick={nextService}>
+              <button
+                className="nav-btn"
+                onClick={nextService}
+                aria-label="Next service"
+              >
                 <FaChevronRight />
               </button>
             </div>
@@ -180,6 +195,7 @@ const Services = () => {
                   key={index}
                   className={`indicator ${activeTab === index ? "active" : ""}`}
                   onClick={() => setActiveTab(index)}
+                  aria-label={`Go to service ${index + 1}`}
                 />
               ))}
             </div>
