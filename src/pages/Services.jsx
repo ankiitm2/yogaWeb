@@ -13,7 +13,7 @@ const Services = () => {
         "Flexible scheduling",
         "Personal attention",
       ],
-      price: "₹1500/session",
+      price: "Fill Form",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const Services = () => {
         "Synchronized breathing",
         "Shared goals",
       ],
-      price: "₹2500/session",
+      price: "Fill Form",
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const Services = () => {
         "Builds family unity",
         "Healthy habits together",
       ],
-      price: "₹3000/session",
+      price: "Fill Form",
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ const Services = () => {
         "Improves productivity",
         "Team building",
       ],
-      price: "₹5000/session",
+      price: "Fill Form",
     },
   ];
 
@@ -127,7 +127,9 @@ const Services = () => {
                     <li key={i}>{benefit}</li>
                   ))}
                 </ul>
-                <p className="price">{services[activeTab].price}</p>
+                <p className="price">
+                  <a href="/contact">{services[activeTab].price}</a>
+                </p>
               </div>
 
               <button
