@@ -5,9 +5,8 @@ import { useState } from "react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const activeStyle = {
     color: "#4a6b57",
@@ -18,15 +17,22 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <NavLink to="/" className="logo-link">
+        <NavLink to="/" className="logo-link" onClick={closeMenu}>
           <img src="/yogaLogo.png" alt="RB Yoga Logo" width={60} />
           <span>RB Yoga</span>
         </NavLink>
 
-        <button className="mobile-menu-button" onClick={toggleMenu}>
+        {/* Mobile Menu Toggle Button */}
+        <button
+          className="mobile-menu-button"
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+          aria-expanded={isMenuOpen}
+        >
           ☰
         </button>
 
+        {/* Navigation Menu */}
         <nav className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
           <ul className="nav-list">
             <li>
@@ -34,7 +40,7 @@ const Header = () => {
                 to="/"
                 className="nav-link"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
               >
                 Home
               </NavLink>
@@ -44,7 +50,7 @@ const Header = () => {
                 to="/about"
                 className="nav-link"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
               >
                 About
               </NavLink>
@@ -54,7 +60,7 @@ const Header = () => {
                 to="/services"
                 className="nav-link"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
               >
                 Services
               </NavLink>
@@ -64,15 +70,19 @@ const Header = () => {
                 to="/contact"
                 className="nav-link"
                 style={({ isActive }) => (isActive ? activeStyle : undefined)}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={closeMenu}
               >
                 Contact
               </NavLink>
             </li>
             <li>
-              <a href="tel:9958021357" className="phone-link">
-                <IoCall />
-                <span>9958021357</span>
+              <a
+                href="tel:9958021357"
+                className="phone-link"
+                onClick={closeMenu}
+              >
+                <IoCall aria-hidden="true" />
+                <span className="phone-number">9958021357</span>
               </a>
             </li>
           </ul>
