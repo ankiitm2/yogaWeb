@@ -33,6 +33,10 @@ const ExitIntentPopup = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -41,11 +45,12 @@ const ExitIntentPopup = () => {
         "service_d6ynf6c",
         "template_ep8xazb",
         {
-          title: "New Yoga Booking Request",
-          name: formData.name,
-          email: formData.email,
+          title: "New Yoga Booking Request (Popup)",
+          from_name: formData.name,
+          from_email: formData.email,
           phone: formData.phone,
-          message: formData.message,
+          message: "Interested in yoga session - Special Offer",
+          reply_to: formData.email,
         },
         "iZFeSmwOTXfOQ_Ovy"
       );
