@@ -206,6 +206,8 @@ body {
   color: #00e55a !important;
   font-weight: 600;
   position: relative;
+  border: none;
+  outline: none;
 }
 
 .nav-link.active::after {

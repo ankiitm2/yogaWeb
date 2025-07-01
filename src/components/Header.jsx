@@ -11,7 +11,6 @@ const Header = () => {
   const activeStyle = {
     color: "#4a6b57",
     fontWeight: "600",
-    borderBottom: "2px solid #4a6b57",
   };
 
   return (
