@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://rbyoga.netlify.app/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 10
