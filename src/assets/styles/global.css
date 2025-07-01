@@ -568,6 +568,11 @@ body {
   .features-grid {
     grid-template-columns: 1fr;
   }
+
+  .hero {
+    height: 55vh;
+    padding-top: 4rem;
+  }
 }
 
 /* Services Section */
