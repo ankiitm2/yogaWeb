@@ -13,6 +13,8 @@ const Home = lazy(() => import("./pages/Home"));
 const AboutPage = lazy(() => import("./pages/AboutPage"));
 const Services = lazy(() => import("./pages/Services"));
 const ContactPage = lazy(() => import("./pages/Contact"));
+const ClassesPage = lazy(() => import("./pages/ClassesPage"));
+
 import { ErrorBoundary } from "react-error-boundary";
 
 function ErrorFallback({ error, resetErrorBoundary }) {
@@ -38,6 +40,7 @@ function App() {
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<Services />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/classes" element={<ClassesPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
