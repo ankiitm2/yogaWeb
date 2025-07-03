@@ -1,7 +1,7 @@
 [build]
   command = "npm install && npm run build"
-  publish = "build"
-  environment = { NODE_VERSION = "16" }
+  publish = "dist"  # Vite uses 'dist' instead of 'build'
+  environment = { NODE_VERSION = "18" }  # Vite works best with Node 18+
 
 [[headers]]
   for = "/*"
