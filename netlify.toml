@@ -1,9 +1,8 @@
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "build"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "all"
-    Cache-Control = "public, max-age=3600"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
