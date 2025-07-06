@@ -626,17 +626,6 @@ textarea:focus {
   background-color: #15803d;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .classes-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  }
-
-  .classes-page h1 {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 640px) {
   .inline-flex.rounded-md.shadow-sm {
     display: flex;
@@ -944,17 +933,6 @@ textarea:focus {
   }
 }
 
-@media (max-width: 768px) {
-  .mission-section,
-  .testimonial-preview {
-    padding: 2rem 1rem;
-  }
-
-  blockquote {
-    font-size: 1rem;
-  }
-}
-
 @media (max-width: 480px) {
   .stat-item {
     flex: 1 1 100%;
@@ -1255,21 +1233,6 @@ textarea.form-control {
   }
 }
 
-@media (max-width: 768px) {
-  .carousel {
-    margin: 0 30px;
-  }
-
-  .carousel-button {
-    width: 35px;
-    height: 35px;
-  }
-
-  .service-content {
-    padding: 1rem;
-  }
-}
-
 @media (max-width: 480px) {
   .carousel {
     margin: 0 20px;
@@ -1417,27 +1380,6 @@ textarea.form-control {
 
 .submit-btn:hover {
   background: #3a5a47;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .contact-container {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .booking-form {
-    grid-template-columns: 1fr;
-  }
-
-  .form-group:nth-child(5),
-  .form-group:nth-child(6) {
-    grid-column: span 1;
-  }
-
-  .submit-btn {
-    grid-column: span 1;
-  }
 }
 
 /* Form Validation */
@@ -1792,6 +1734,57 @@ textarea.form-control {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .contact-container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group:nth-child(5),
+  .form-group:nth-child(6) {
+    grid-column: span 1;
+  }
+
+  .submit-btn {
+    grid-column: span 1;
+  }
+
+  .carousel {
+    margin: 0 30px;
+  }
+
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .service-content {
+    padding: 1rem;
+  }
+  .mission-section,
+  .testimonial-preview {
+    padding: 2rem 1rem;
+  }
+
+  blockquote {
+    font-size: 1rem;
+  }
+
+  .classes-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .classes-page h1 {
+    font-size: 2rem;
+  }
+
+  body {
+    font-size: 22px;
+  }
+
   .testimonials {
     padding: 3rem 0;
   }
@@ -1960,9 +1953,6 @@ textarea.form-control {
 
   .banner-icon {
     font-size: 2.5rem;
-  }
-  .header-container {
-    padding: 1rem;
   }
 
   .nav-menu {
