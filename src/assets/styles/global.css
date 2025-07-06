@@ -384,6 +384,7 @@ body {
 /* Filter Tabs */
 .flex.justify-center.mb-12 {
   margin-bottom: 3rem;
+  margin-top: 1rem;
 }
 
 .inline-flex.rounded-md.shadow-sm {

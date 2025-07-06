@@ -24,7 +24,7 @@ const ClassesPage = () => {
       schedule: "Mon, Wed, Fri | 7:00 AM",
       location: "Your Home / Online",
       instructor: "RB",
-      image: "/hatha-yoga.jpg",
+      image: "/hathayoga.jpg",
       type: "private",
     },
     {
@@ -37,7 +37,7 @@ const ClassesPage = () => {
       schedule: "Tue, Thu | 6:30 AM",
       location: "Your Home / Online",
       instructor: "RB",
-      image: "/vinyasa-yoga.jpg",
+      image: "/vinyasaYoga.jpg",
       type: "group",
     },
     {
@@ -50,7 +50,7 @@ const ClassesPage = () => {
       schedule: "Sat | 9:00 AM",
       location: "Your Home / Online",
       instructor: "RB",
-      image: "/yin-yoga.jpg",
+      image: "/yinYoga.jpg",
       type: "private",
     },
     {
