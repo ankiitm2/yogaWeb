@@ -141,6 +141,10 @@ textarea:focus {
   z-index: 1001;
 }
 
+.header.scrolled .logo-link {
+  color: #4a6b57;
+}
+
 .logo-link img {
   height: 40px;
   width: auto;
@@ -158,6 +162,11 @@ textarea:focus {
   align-items: center;
   margin: 0;
   padding: 0;
+}
+
+.header.scrolled .nav-link {
+  color: #4a6b57;
+  font-weight: 500;
 }
 
 .nav-link {
@@ -198,7 +207,7 @@ textarea:focus {
 
 /* Active Navigation Link */
 .nav-link.active {
-  color: #00e55a !important;
+  color: #4a6b57 !important;
   font-weight: 600;
   position: relative;
 }
@@ -210,7 +219,7 @@ textarea:focus {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #00e55a;
+  background-color: #4a6b57;
 }
 
 /* Mobile Styles */
@@ -224,7 +233,7 @@ textarea:focus {
     top: 0;
     left: 0;
     width: 100%;
-    height: 70vh;
+    height: fit-content;
     background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(5px);
     flex-direction: column;
@@ -239,10 +248,7 @@ textarea:focus {
   .nav-menu.active {
     transform: translateY(0);
     opacity: 1;
-  }
-
-  .phone-link {
-    margin-top: 1rem;
+    padding-bottom: 1.5rem;
   }
 
   .header.scrolled .nav-menu {
@@ -1956,6 +1962,7 @@ textarea.form-control {
     width: 100%;
     align-items: start;
     padding: 0 2rem;
+    padding-top: 3.2rem;
   }
 
   .mobile-menu-button {

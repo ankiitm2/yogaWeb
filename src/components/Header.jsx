@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { IoCall } from "react-icons/io5";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
@@ -13,8 +14,21 @@ const Header = () => {
     fontWeight: "600",
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="header">
+    <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-container">
         <NavLink to="/" className="logo-link" onClick={closeMenu}>
           <img src="/yogaLogo.png" alt="RB Yoga Logo" width={40} />
