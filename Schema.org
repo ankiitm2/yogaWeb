@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "RB Yoga",
+  "description": "Personal yoga teacher offering at-home classes in India.",
+  "url": "https://rbyoga.netlify.app",
+  "address": {
+    "@type": "Sultanpur, Gurgaon, Haryana",
+    "addressLocality": "Gurgaon",
+    "addressCountry": "IN"
+  },
+  "telephone": "+91-9958021357"
+}
+`}
+</script>
