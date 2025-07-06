@@ -7,6 +7,10 @@ html {
 body {
   animation: fadeInBody 1.5s ease-in;
   font-size: 16px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
 }
 
 @keyframes fadeInBody {
@@ -80,14 +84,6 @@ textarea:focus {
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Arial", sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
-  font-size: 22px;
-}
-
 .text-center {
   text-align: center;
 }
@@ -111,7 +107,7 @@ body {
   position: absolute;
   width: 100%;
   color: white;
-  font-size: 1.4rem;
+  /* font-size: 1.4rem; */
   top: 0;
   z-index: 50;
 }
@@ -137,7 +133,6 @@ body {
   gap: 10px;
   text-decoration: none;
   font-weight: bold;
-  font-size: 22px;
   color: white;
   transition: color 0.3s ease;
 }
@@ -152,7 +147,7 @@ body {
   color: white;
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 1.6rem;
   align-items: center;
 }
 
@@ -633,20 +628,20 @@ body {
 }
 
 .hero-title {
-  font-size: clamp(1.8rem, 6vw, 3rem);
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 4vw, 1.2rem);
+  font-size: clamp(1rem, 4vw, 1rem);
   margin-bottom: 2rem;
 }
 
 /* Button Styles */
 .btn {
   display: inline-block;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 1.5rem;
   background-color: #4a6b57;
   color: white;
   text-decoration: none;
@@ -714,8 +709,7 @@ body {
 }
 
 .banner-title {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
   text-transform: uppercase;
   letter-spacing: 3px;
 }
@@ -725,7 +719,6 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  font-size: 1.1rem;
 }
 
 .breadcrumbs a {
@@ -746,7 +739,7 @@ body {
 .about-content {
   display: flex;
   margin-top: 1.5rem;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   margin-bottom: 4rem;
 }
@@ -893,10 +886,6 @@ body {
 }
 
 @media (max-width: 768px) {
-  .banner-title {
-    font-size: 2.2rem;
-  }
-
   .mission-section,
   .testimonial-preview {
     padding: 2rem 1rem;
@@ -908,10 +897,6 @@ body {
 }
 
 @media (max-width: 480px) {
-  .banner-title {
-    font-size: 1.8rem;
-  }
-
   .stat-item {
     flex: 1 1 100%;
   }
@@ -1306,8 +1291,7 @@ textarea.form-control {
 }
 
 .contact-banner h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
 }
 
 .breadcrumbs span:last-child {
@@ -1848,18 +1832,9 @@ textarea.form-control {
 }
 
 .services-banner h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: clamp(1.8rem, 6vw, 2.3rem);
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-.breadcrumbs {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
 }
 
 .breadcrumbs a {

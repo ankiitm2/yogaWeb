@@ -17,7 +17,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <NavLink to="/" className="logo-link" onClick={closeMenu}>
-          <img src="/yogaLogo.png" alt="RB Yoga Logo" width={60} />
+          <img src="/yogaLogo.png" alt="RB Yoga Logo" width={40} />
           <span>RB Yoga</span>
         </NavLink>
 
