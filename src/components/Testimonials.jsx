@@ -78,24 +78,21 @@ const Testimonials = () => {
 
   const variants = {
     enter: (direction) => ({
-      x: direction === "right" ? 300 : -300,
+      x: direction === "right" ? "100%" : "-100%",
       opacity: 0,
-      scale: 0.9,
     }),
     center: {
       x: 0,
       opacity: 1,
-      scale: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 15,
+        stiffness: 300,
+        damping: 30,
       },
     },
     exit: (direction) => ({
-      x: direction === "right" ? -300 : 300,
+      x: direction === "right" ? "-100%" : "100%",
       opacity: 0,
-      scale: 0.9,
       transition: {
         duration: 0.2,
       },
@@ -104,7 +101,7 @@ const Testimonials = () => {
 
   return (
     <section className="testimonials">
-      <div className="testimonials__container container">
+      <div className="testimonials__container">
         <h2 className="testimonials__title">What Our Students Say</h2>
         <p className="testimonials__subtitle">
           Hear from our satisfied yoga practitioners
@@ -124,7 +121,7 @@ const Testimonials = () => {
           </button>
 
           <div className="testimonials__track">
-            <AnimatePresence custom={direction} mode="popLayout">
+            <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={currentIndex}
                 custom={direction}

@@ -97,6 +97,7 @@ textarea:focus {
 }
 
 /* Header Styles */
+/* Header Styles */
 .header {
   display: flex;
   justify-content: space-between;
@@ -104,12 +105,12 @@ textarea:focus {
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  position: absolute;
+  position: fixed;
   width: 100%;
   color: white;
-  /* font-size: 1.4rem; */
   top: 0;
-  z-index: 50;
+  z-index: 1000;
+  padding: 0.5rem 0;
 }
 
 .header.scrolled {
@@ -124,7 +125,9 @@ textarea:focus {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .logo-link {
@@ -135,20 +138,26 @@ textarea:focus {
   font-weight: bold;
   color: white;
   transition: color 0.3s ease;
+  z-index: 1001;
+}
+
+.logo-link img {
+  height: 40px;
+  width: auto;
 }
 
 .nav-menu {
-  color: white;
   display: flex;
-  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav-list {
-  color: white;
   display: flex;
   list-style: none;
-  gap: 1.6rem;
+  gap: 1.5rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-link {
@@ -156,6 +165,7 @@ textarea:focus {
   color: white;
   font-weight: 500;
   transition: color 0.3s ease;
+  padding: 0.5rem 0;
 }
 
 .phone-link {
@@ -176,25 +186,14 @@ textarea:focus {
 }
 
 .mobile-menu-button {
-  font-size: 2rem;
+  display: none;
+  font-size: 1.8rem;
   background: none;
   border: none;
   cursor: pointer;
-  display: none;
-}
-
-.nav-menu.active {
-  background: #000;
-  align-items: start;
-  top: 68px;
-}
-
-.nav-menu.active .nav-list {
-  align-items: start;
-}
-
-.nav-menu.active .nav-link > li > a {
   color: white;
+  z-index: 1001;
+  padding: 0.5rem;
 }
 
 /* Active Navigation Link */
@@ -202,25 +201,85 @@ textarea:focus {
   color: #00e55a !important;
   font-weight: 600;
   position: relative;
-  border: none;
-  outline: none;
 }
 
 .nav-link.active::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 0;
   width: 100%;
   height: 2px;
   background-color: #00e55a;
 }
 
-/* Mobile active state */
-.nav-menu.active .nav-link.active {
-  color: #00e55a !important;
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(74, 107, 87, 0.95);
+    backdrop-filter: blur(5px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .phone-link {
+    margin-top: 1rem;
+  }
+
+  .header.scrolled .nav-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  .header.scrolled .nav-link {
+    color: #333;
+  }
+
+  .header.scrolled .phone-link {
+    background-color: #4a6b57;
+    color: white;
+  }
 }
 
+/* Desktop active state */
+@media (min-width: 769px) {
+  .nav-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: transparent;
+    backdrop-filter: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+}
 /* Loading Spinner */
 .loading-spinner {
   display: flex;
@@ -612,7 +671,7 @@ textarea:focus {
 }
 
 .hero {
-  height: 80vh;
+  height: 60vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/man-practicing-yoga-mindfulness.jpg") center/cover no-repeat;
   color: white;
@@ -1053,57 +1112,6 @@ textarea.form-control {
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header-container {
-    padding: 1rem;
-  }
-
-  .nav-menu {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background: white;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-150%);
-    transition: transform 0.3s ease;
-  }
-
-  .nav-menu.active {
-    transform: translateY(0);
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  .mobile-menu-button {
-    display: block;
-  }
-
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .about-content {
-    flex-direction: column;
-  }
-
-  .footer-content {
-    flex-direction: column;
-  }
 }
 
 /* Services Carousel */
@@ -1627,7 +1635,7 @@ textarea.form-control {
 }
 
 .testimonials__container {
-  max-width: 1200px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -1655,6 +1663,7 @@ textarea.form-control {
 .testimonials__track {
   position: relative;
   min-height: 300px;
+  overflow: hidden;
 }
 
 .testimonials__card {
@@ -1663,8 +1672,10 @@ textarea.form-control {
   border-radius: 8px;
   box-shadow: var(--testimonial-shadow);
   text-align: center;
-  animation: fadeUp 1s ease-in-out;
   width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .testimonials__avatar {
@@ -1674,29 +1685,17 @@ textarea.form-control {
   margin: 0 auto 1.5rem;
 }
 
-.about-image img,
-.service-image img {
-  transition: transform 0.4s ease-in-out;
-}
-
-.about-image:hover img,
-.service-card:hover .service-image img {
-  transform: scale(1.05);
-}
-
 .testimonials__image {
   width: 100%;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  /* border: 3px solid var(--testimonial-primary); */
 }
 
 .testimonials__quote-icon {
   position: absolute;
   top: -10px;
   right: -10px;
-  /* background-color: var(--testimonial-primary); */
   color: var(--testimonial-primary);
   width: 30px;
   height: 30px;
@@ -1741,7 +1740,7 @@ textarea.form-control {
 
 .testimonials__button {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   background: var(--testimonial-primary);
   color: white;
@@ -1752,6 +1751,7 @@ textarea.form-control {
   align-items: center;
   justify-content: center;
   border: none;
+  z-index: 2;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -1960,6 +1960,53 @@ textarea.form-control {
 
   .banner-icon {
     font-size: 2.5rem;
+  }
+  .header-container {
+    padding: 1rem;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .footer-content {
+    flex-direction: column;
   }
 }
 
